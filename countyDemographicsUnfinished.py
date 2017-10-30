@@ -100,11 +100,16 @@ def state_with_most_counties(counties):
         'WV': '55',
         'WY': '23'
 }
-    #Find the state in the dictionary with the most counties 
+    #Find the state in the dictionary with the most counties
+	maximum = max(dictStates, key=dictStates.get)
     #Return the state with the most counties
-    len(dictStates.keys())
+	return (maximum, dictStates,[maximum])
 def your_interesting_demographic_function(counties):
     """Compute and return an interesting fact using the demographic data about the counties in the US."""
+	interFact = counties[0]["County"]
+	for i in counties:
+		if interFact > counties[0]:
+			return interFact
 
 if __name__ == '__main__':
     main()
