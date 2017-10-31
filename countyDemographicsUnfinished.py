@@ -48,58 +48,12 @@ def most_under_18(counties):
 def state_with_most_counties(counties):
     """Return a state that has the most counties."""
     #Make a dictionary that has a key for each state and the values keep track of the number of counties in each state
-    dictStates = {
-        'AK': '19',
-        'AL': '67',
-        'AR': '75',
-        'AZ': '15',
-        'CA': '58',
-        'CO': '64',
-        'CT': '8',
-        'DE': '3',
-        'FL': '67',
-        'GA': '159',
-        'HI': '5',
-        'IA': '99',
-        'ID': '44',
-        'IL': '102',
-        'IN': '92',
-        'KS': '105',
-        'KY': '120',
-        'LA': '64',
-        'MA': '14',
-        'MD': '24',
-        'ME': '16',
-        'MI': '83',
-        'MN': '87',
-        'MO': '114',
-        'MS': '82',
-        'MT': '56',
-        'NC': '100',
-        'ND': '53',
-        'NE': '93',
-        'NH': '10',
-        'NJ': '21',
-        'NM': '33',
-        'NV': '16',
-        'NY': '62',
-        'OH': '88',
-        'OK': '77',
-        'OR': '36',
-        'PA': '67',
-        'RI': '5',
-        'SC': '46',
-        'SD': '66',
-        'TN': '95',
-        'TX': '254',
-        'UT': '29',
-        'VA': '95',
-        'VT': '14',
-        'WA': '39',
-        'WI': '75',
-        'WV': '55',
-        'WY': '23'
-}
+    dictStates = {}
+	for d in counties:
+		if d["State"] in dictStates:
+			dictStates[d["State"]]++
+		else:
+			dictStates[d["State"]] = 1
     #Find the state in the dictionary with the most counties
 	maximum = max(dictStates, key=dictStates.get)
     #Return the state with the most counties
