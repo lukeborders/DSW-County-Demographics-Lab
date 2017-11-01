@@ -67,7 +67,10 @@ def state_with_most_counties(counties):
     return (maximum, dictStates,[maximum])
 def your_interesting_demographic_function(counties):
     """Compute and return an interesting fact using the demographic data about the counties in the US."""
-    
+    for c in counties:
+        if c["County"] == "Autauga County":
+            return c["Miscellaneous"]["Percent Female"]
+        
 
 if __name__ == '__main__':
     main()
